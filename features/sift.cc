@@ -408,9 +408,9 @@ Sift::keypoint_localization (void)
              */
 
             /**********************************************************************************/
-//            H[0] = Dxx; H[1] = Dxy; H[2] = Dxs;
-//            H[3] = Dxy; H[4] = Dyy; H[5] = Dys;
-//            H[6] = Dxs; H[7] = Dys; H[8] = Dss;
+            H[0] = Dxx; H[1] = Dxy; H[2] = Dxs;
+            H[3] = Dxy; H[4] = Dyy; H[5] = Dys;
+            H[6] = Dxs; H[7] = Dys; H[8] = Dss;
 
 
             /* Compute determinant to detect singular matrix. */

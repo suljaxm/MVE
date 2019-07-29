@@ -120,6 +120,10 @@ bool  is_correct_pose (math::Matrix3d const &R1, math::Vec3d const & t1
       *todo  判断相机姿态是否正确： 三维点在两个相机坐标系的深度(z坐标)同时为正
       *
       */
+    math::Vector<double, 3> x1 = R1 * p3d + t1;
+    math::Vector<double, 3> x2 = R2 * p3d + t2;
+    flag = x1[2] > 0.0f && x2[2] > 0.0f;
+
     return flag;
 }
 
@@ -140,6 +144,8 @@ bool calc_cam_poses(FundamentalMatrix const &F
      * todo 计算本质矩阵
      *
      */
+    E = K2.transpose() * F * K1;
+
 
     std::cout<<"EssentialMatrix result is "<<E<<std::endl;
     std::cout<<"EssentialMatrix should be: \n"

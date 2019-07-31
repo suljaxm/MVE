@@ -185,6 +185,11 @@ void
     result->at(2).t = result->at(0).t;
     result->at(3).t = -result->at(0).t;
 
+    //std::cout<<"R0: "<< result->at(0).R<<" t0: "<<result->at(0).t<<std::endl;
+    //std::cout<<"R1: "<< result->at(1).R<<" t1: "<<result->at(1).t<<std::endl;
+    //std::cout<<"R2: "<< result->at(2).R<<" t2: "<<result->at(2).t<<std::endl;
+    //std::cout<<"R3: "<< result->at(3).R<<" t3: "<<result->at(3).t<<std::endl;
+
     // FIXME: Temporary sanity check.
     if (!MATH_EPSILON_EQ(math::matrix_determinant(result->at(0).R), 1.0, 1e-3))
         throw std::runtime_error("Invalid rotation matrix");

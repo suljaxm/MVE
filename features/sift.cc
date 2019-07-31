@@ -480,6 +480,7 @@ Sift::keypoint_localization (void)
         /************************************************************************************/
         float val = dogs[1]->at(ix, iy, 0) + 0.5f * (Dx * delta_x + Dy * delta_y + Ds * delta_s);
         /* Calcualte edge response score Tr(H)^2 / Det(H), see Section 4.1. */
+
          /**************************去除边缘点，参考第33页slide 仔细阅读代码 ****************************/
         float hessian_trace = Dxx + Dyy;
         float hessian_det = Dxx * Dyy - MATH_POW2(Dxy);

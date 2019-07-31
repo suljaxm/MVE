@@ -111,6 +111,7 @@ inline Scene::Ptr
 Scene::create (std::string const& path)
 {
     Scene::Ptr scene(new Scene);
+    if(path.empty()) return scene;
     scene->load_scene(path);
     return scene;
 }
